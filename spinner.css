@@ -1,0 +1,144 @@
+body{
+    background-color:black;
+}
+
+body:hover .container {
+    transform:rotate(360deg); 
+}
+
+div{
+    display:flex;
+}
+
+.spinner{
+    margin:200px;
+    color:white;
+    font-size:100px;
+    font-weight: 1000px;
+    font-family: Geneva;
+    text-align:center;
+    animation: spinner_move 10s infinite; 
+}
+
+@keyframes spinner_move{
+    0% {color:rgb(26, 87, 87)}
+    10%{color:rgb(124, 237, 247)}
+    20%{color:rgb(45, 173, 224)}
+    30%{color:rgb(91, 125, 235)}
+    40%{color:rgb(129, 249, 151)}
+    50%{color:rgb(6, 67, 8)}
+    60%{color:rgb(236, 133, 60)}
+    70%{color:rgb(244, 76, 25)}
+    80%{color:rgb(130, 29, 85)}
+    90%{color:rgb(113, 18, 36)}
+    100%{color:rgb(1, 58, 6)}
+}
+
+.container{
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:0;
+    bottom:0;
+    left:500px;
+    right:0;
+    margin:auto;
+    transition: transform 2s;
+}
+
+.item{
+    height:100px;
+    width:100px;
+    position:absolute;
+}
+
+.item1{
+    top:0;
+    left:0;
+    z-index:1; 
+    background-color:aqua;
+    animation: item1_move 5s infinite;
+}
+
+.item2{
+    top:0;
+    right:0;
+    background-color:rgb(145, 16, 152);
+    animation: item2_move 5s infinite;
+}
+
+.item3{
+    bottom:0;
+    right:0;
+    z-index:1;
+    background-color:rgb(42, 183, 30);
+    animation: item3_move 5s infinite;
+}
+
+.item4{
+    left:0;
+    bottom:0;
+    z-index:1;
+    background-color:rgb(197, 76, 121);
+    animation: item4_move 5s infinite;
+}
+
+@keyframes item1_move {
+    0% , 100%{
+        transform:translate(0,0);
+    }
+    25%{
+        transform:translate(0,100px)
+    }
+    50% {
+        transform:translate(100px, 100px)
+    }
+    75%{
+        transform:translate(100px,0)
+    }
+}
+
+@keyframes item2_move {
+    0%, 100%{
+        transform:translate(0,0)
+    }
+    25%{
+        transform:translate(-100px,0)
+    }
+    50%{
+        transform:translate(-100px,100px)
+    }
+    75%{
+        transform:translate(0,100px)
+    }
+}
+
+@keyframes item3_move {
+    0%,100%{
+        transform:translate(0,0)
+    }
+    25%{
+        transform:translate(0,-100px)
+    }
+    50%{
+        transform:translate(-100px,-100px)
+    }
+    75%{
+        transform:translate(-100px,0)
+    }
+}
+
+@keyframes item4_move {
+    0%,100%{
+        transform:translate(0,0)
+    }
+    25%{
+        transform:translate(100px,0)
+    }
+    50%{
+        transform:translate(100px,-100px)
+    }
+    75%{
+        transform:translate(0,-100px)
+    }
+}
